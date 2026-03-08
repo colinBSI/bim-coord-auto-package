@@ -8,7 +8,7 @@ A complete BIM coordination system for Revit and Navisworks projects. Includes a
 
 | Component | Description |
 |---|---|
-| **BIMTools pyRevit Toolbar** | 22 buttons across 5 panels — project setup, model health checks, clash coordination, reporting, and utilities |
+| **BIMTools pyRevit Toolbar** | 22 buttons across 6 panels — project setup, model health checks, clash coordination, reporting, utilities, and health scoring |
 | **BIM_Automation Pipeline** | Python script that runs every Wednesday, grouping and prioritizing clashes, then generating CSV/Excel/PDF reports |
 | **Power BI Command Center** | 4 dashboards pulling from pipeline output CSVs — project health, clash heat map, coordination performance, model health trends |
 
@@ -67,6 +67,7 @@ Then reload pyRevit.
 BIM Coord Auto Package/
 ├── BIMTools.extension/          pyRevit toolbar (22 scripts)
 │   ├── lib/bim_utils.py         Shared utilities
+│   ├── BIM.panel/               1 button: HealthScore (150-pt model scorer)
 │   ├── Project_Setup.panel/     6 setup buttons
 │   ├── Model_Health.panel/      6 health check buttons
 │   ├── Coordination.panel/      6 clash workflow buttons
@@ -117,7 +118,7 @@ BIM Coord Auto Package/
 
 ## Model Health Score
 
-The **HealthScore** button generates a 150-point score across 8 categories. Scores are logged to `model_health_scores.csv` for trend tracking in Power BI.
+The **HealthScore** button (BIM panel) generates a 150-point score across 8 categories. Scores are logged to `model_health_scores.csv` for trend tracking in Power BI.
 
 | Score | Rating |
 |---|---|
