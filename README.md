@@ -1,6 +1,6 @@
 # BIM Coordination Auto Package
 
-A complete BIM coordination system for Revit and Navisworks projects. Includes a pyRevit toolbar (22 scripts), a Python automation pipeline, and Power BI dashboard guides.
+A complete BIM coordination system for Revit and Navisworks projects. Includes a pyRevit toolbar (27 scripts), a Python automation pipeline, and Power BI dashboard guides.
 
 ---
 
@@ -8,7 +8,7 @@ A complete BIM coordination system for Revit and Navisworks projects. Includes a
 
 | Component | Description |
 |---|---|
-| **BIMTools pyRevit Toolbar** | 22 buttons across 6 panels — project setup, model health checks, clash coordination, reporting, utilities, and health scoring |
+| **BIMTools pyRevit Toolbar** | 27 buttons across 7 panels — project setup, model health checks, clash coordination, coordinate management, reporting, utilities, and health scoring |
 | **BIM_Automation Pipeline** | Python script that runs every Wednesday, grouping and prioritizing clashes, then generating CSV/Excel/PDF reports |
 | **Power BI Command Center** | 4 dashboards pulling from pipeline output CSVs — project health, clash heat map, coordination performance, model health trends |
 
@@ -65,12 +65,15 @@ Then reload pyRevit.
 
 ```
 BIM Coord Auto Package/
-├── BIMTools.extension/          pyRevit toolbar (22 scripts)
-│   ├── lib/bim_utils.py         Shared utilities
+├── BIMTools.extension/          pyRevit toolbar (27 scripts)
+│   ├── lib/
+│   │   ├── bim_utils.py         Shared utilities
+│   │   └── coord_utils.py       Coordinate math + Extensible Storage I/O
 │   ├── BIM.panel/               1 button: HealthScore (150-pt model scorer)
 │   ├── Project_Setup.panel/     6 setup buttons
 │   ├── Model_Health.panel/      6 health check buttons
-│   ├── Coordination.panel/      6 clash workflow buttons
+│   ├── Coordination.panel/      7 clash workflow buttons
+│   ├── Coordinates.panel/       4 coordinate management buttons
 │   ├── Reporting.panel/         2 reporting buttons
 │   └── Utilities.panel/         2 utility buttons
 ├── BIM_Automation/              Python pipeline
@@ -113,6 +116,7 @@ BIM Coord Auto Package/
 | [Utilities](docs/tools/05-utilities.md) | ExportGrids and SyncAndClose |
 | [Pipeline](docs/tools/06-pipeline.md) | Python automation pipeline reference |
 | [Power BI](docs/tools/07-power-bi.md) | Dashboard setup and data sources |
+| [Coordinates](docs/tools/08-coordinates.md) | Coordinate setup, validation, grid finder, CAD export |
 
 ---
 
