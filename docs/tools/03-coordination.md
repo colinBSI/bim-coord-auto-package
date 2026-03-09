@@ -106,6 +106,44 @@ The Coordination panel supports active clash review workflows. Use these tools d
 
 ---
 
+### Model Alignment
+
+**Purpose:** Scans all linked Revit models and reports their offset and rotation relative to the host model. Flags any link that exceeds alignment tolerances.
+
+**When to use:**
+- At the start of each coordination session to verify all links are properly aligned
+- When a team submits an updated model and alignment needs to be confirmed
+- Any time clash results seem spatially incorrect (often caused by misaligned links)
+
+**How to use:**
+1. Open the host coordination model with all links loaded
+2. Click **Model Alignment**
+3. Review the alignment report in the output window
+
+**Output:**
+
+| Column | Description |
+|---|---|
+| Linked Model | File name of the linked model |
+| Offset XY (ft) | Horizontal distance from host origin |
+| Offset Z (ft) | Vertical offset from host origin |
+| Rotation (°) | Rotation difference from host |
+| Status | OK / OFFSET / ELEVATION / ROTATION |
+
+**Tolerance thresholds:**
+
+| Check | Tolerance | Flag |
+|---|---|---|
+| XY translation | 0.05 ft | OFFSET |
+| Z elevation | 0.02 ft | ELEVATION |
+| Rotation | 0.05° | ROTATION |
+
+> Read-only — this tool reports issues only. To fix a misaligned link, use Revit's **Manage Links** dialog or ask the model owner to republish shared coordinates.
+
+> A link can show multiple flags simultaneously (e.g. `OFFSET + ROTATION`).
+
+---
+
 ## Coordination Tolerances
 
 | Type | Tolerance |
